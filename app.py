@@ -3,6 +3,11 @@ import time
 
 app = Flask(__name__)
 todos = ['eat beans', 'commit tax fraud', 'sniff flowers', 'read ohio lore', 'study rizz']
+
+@app.route('/basic/<thing>')
+def basic(thing):
+    return render_template('temp2.html', thing=thing)
+
 @app.route('/sketchy')
 def sketchy():
     return render_template('temp1.html')
